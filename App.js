@@ -10,6 +10,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Textcompo from './components/Textcomponent';
 import Textscreen from './screens/Textscreen';
 import LoginScreen from './screens/LoginScreen';
+import DetailScreen from './screens/DetailScreen';
 
 export default function App() {
   const Tab = createBottomTabNavigator();
@@ -37,6 +38,16 @@ export default function App() {
           ),
         }}
       />
+      {/* <Tab.Screen
+        name="Detail"
+        component={DetailScreen}
+        options={{
+          tabBarLabel: 'Detail',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="heart" color={color} size={size} />
+          ),
+        }}
+      /> */}
     </Tab.Navigator>
   );
 
@@ -44,14 +55,19 @@ export default function App() {
     <View style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen
+          {/* <Stack.Screen
             name="Login"
             component={LoginScreen}
             options={{ headerShown: false }}
-          />
-          <Stack.Screen
+          /> */}
+          {/* <Stack.Screen
             name="Main"
             component={MainTabNavigator}
+            options={{ headerShown: false }}
+          /> */}
+          <Stack.Screen
+            name="Detail"
+            component={DetailScreen}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
